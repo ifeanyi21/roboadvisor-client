@@ -3,6 +3,7 @@ import Layout from "../components/layout/Layout";
 import Button from "../components/Button/Button";
 import Video from "../components/assests/videos/mi-en.webm";
 import Banner from "../components/assests/images/managedInvestingSupportingZoe.webp";
+import RiskSection from "../components/RiskSection";
 
 const Home = () => {
   const services = [
@@ -162,7 +163,7 @@ const Home = () => {
       <div className="bg-[#a8bac2] mt-8">
         <div className="py-32 text-center">
           <div className="md:w-[900px] w-full mx-auto">
-            <h1 className="text-7xl font-medium mb-6">
+            <h1 className="md:text-7xl text-4xl font-medium mb-6">
               Let's make your money make money
             </h1>
             <p className="text-xl font-light mb-8">
@@ -173,10 +174,13 @@ const Home = () => {
           <Button
             title={"Get Started"}
             className={
-              "border border-black bg-black/90 text-white rounded-full px-4 py-4"
+              "border text-2xl border-black bg-black/90 text-white rounded-full px-5 py-4"
             }
           />
         </div>
+      </div>
+      <div>
+        <RiskSection/>
       </div>
     </Layout>
   );

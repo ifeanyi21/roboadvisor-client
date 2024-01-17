@@ -3,7 +3,7 @@ import Button from "../Button/Button";
 
 const Header = () => {
   return (
-    <div className="md:px-10">
+    <div className="px-10">
       <div className="flex justify-between py-4 border-b items-center">
         <div className="text-3xl font-bold">Roboadvisior</div>
         <div className="flex gap-4">
