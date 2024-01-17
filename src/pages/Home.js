@@ -179,7 +179,7 @@ const Home = () => {
           />
         </div>
       </div>
-      <div>
+      <div className="mt-16 md:px-20 px-10">
         <RiskSection/>
       </div>
     </Layout>

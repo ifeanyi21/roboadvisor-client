@@ -1,44 +1,52 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 
 const getPortfolioData = (riskLevel) => {
   return `Portfolio data for risk level ${riskLevel}`;
 };
 
 function RiskSection() {
-  const [riskLevel, setRiskLevel] = useState(5);
+  const [riskLevel, setRiskLevel] = useState(3);
   const [portfolioData, setPortfolioData] = useState("");
 
-  const updatePortfolio = () => {
+  const hanldeUpdate = (e) => {
+    setRiskLevel(e.target.value);
+    updatePortfolio();
+  };
+
+  const updatePortfolio = useCallback(() => {
     const data = getPortfolioData(riskLevel);
     setPortfolioData(data);
-  };
+  }, [riskLevel]);
 
   useEffect(() => {
     updatePortfolio();
-  }, [riskLevel]);
+  }, [riskLevel, updatePortfolio]);
 
   return (
-      <main>
-        <section id="riskSection">
-          <h2>Select Your Risk Tolerance</h2>
-          <label htmlFor="riskSlider">Risk Level:</label>
+    <main>
+      <section id="riskSection">
+        <h2>Select Your Risk Tolerance</h2>
+        <div className="flex gap-6">
+          <label htmlFor="riskSlider" className="w-[100px]">
+            Risk Level
+          </label>
           <input
             type="range"
             id="riskSlider"
+            className="w-full"
             min="1"
             max="10"
             value={riskLevel}
-            onChange={(e) => setRiskLevel(e.target.value)}
+            onChange={hanldeUpdate}
           />
-          <span id="selectedRisk">{riskLevel}</span>
-          <button onClick={updatePortfolio}>Update Portfolio</button>
-        </section>
-        <section id="portfolioSection">
-          <h2>Your Portfolio</h2>
-          <p>Risk Level: {riskLevel}</p>
-          <p>{portfolioData}</p>
-        </section>
-      </main>
+        </div>
+      </section>
+      <section className="bg-[#f9f9f9] p-5 shadow-md rounded-md">
+        <h2 className="text-xl">Portfolio</h2>
+        <p className="my-2">Risk Level: {riskLevel}</p>
+        <p>{portfolioData}</p>
+      </section>
+    </main>
   );
 }
 

@@ -12,3 +12,25 @@ h6 {
 body {
   font-family: "Poppins", sans-serif;
 }
+
+section {
+  margin-bottom: 20px;
+}
+
+#riskSection {
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 20px;
+}
+
+#selectedRisk {
+  display: inline-block;
+  margin-left: 10px;
+}
+
+#portfolioSection h2 {
+  color: #333;
+}
+
+#portfolioSection p {
+  margin: 10px 0;
+}
