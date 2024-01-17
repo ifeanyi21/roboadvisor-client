@@ -25,12 +25,12 @@ const Home = () => {
   return (
     <Layout>
       <div className="md:px-20 px-10">
-        <div className="grid md:grid-cols-2 md:py-20 py-10">
+        <div className="grid md:grid-cols-2 grid-cols-1 md:py-20 py-10">
           <div className="my-auto mb-4">
-            <h1 className="text-left md:text-7xl text-4xl font-medium mt-2">
+            <h1 className="text-left lg:text-7xl text-4xl font-medium mt-2">
               Managed investing made to grow your wealth
             </h1>
-            <p className="py-8 text-lg md:w-[500px]">
+            <p className="py-8 text-lg lg:w-[500px]">
               We'll build you a smart, sophisticated investment portfolio
               designed to help you achieve your goals.
             </p>
@@ -43,7 +43,7 @@ const Home = () => {
           </div>
           <div className="w-full rounded-xl">
             <video
-              className="rounded-md md:h-full w-full"
+              className="rounded-xl md:h-full w-full"
               muted
               autoPlay
               loop
@@ -54,13 +54,13 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="md:my-64 my-32 md:px-20 px-10">
-        <div className="md:w-[700px]">
-          <h2 className="md:text-6xl text-3xl font-medium">
+      <div className="lg:my-64 my-32 md:px-20 px-10">
+        <div className="lg:w-[700px]">
+          <h2 className="lg:text-6xl text-3xl font-medium">
             Professionally managed portfolios, tailored to you.
           </h2>
         </div>
-        <div className="grid md:grid-cols-3 grid-cols-1 md:pt-32 pt-8 gap-8">
+        <div className="grid lg:grid-cols-3 grid-cols-1 md:pt-32 pt-8 gap-8">
           {services.map((service) => {
             return (
               <div key={service.id} className="text-xl">
@@ -157,6 +157,25 @@ const Home = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+      <div className="bg-[#a8bac2] mt-8">
+        <div className="py-32 text-center">
+          <div className="md:w-[900px] w-full mx-auto">
+            <h1 className="text-7xl font-medium mb-6">
+              Let's make your money make money
+            </h1>
+            <p className="text-xl font-light mb-8">
+              Join over 3 million Canadians who choose Roboadvisor to invest
+              trade, save and more.
+            </p>
+          </div>
+          <Button
+            title={"Get Started"}
+            className={
+              "border border-black bg-black/90 text-white rounded-full px-4 py-4"
+            }
+          />
         </div>
       </div>
     </Layout>
