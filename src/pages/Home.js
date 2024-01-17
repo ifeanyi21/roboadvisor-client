@@ -24,13 +24,13 @@ const Home = () => {
   ];
   return (
     <Layout>
-      <div className="md:px-10">
+      <div className="md:px-20">
         <div className="grid grid-cols-2 py-20">
           <div className="my-auto">
             <h1 className="text-left text-7xl font-medium mt-2">
               Managed investing made to grow your wealth
             </h1>
-            <p className="py-8 text-lg">
+            <p className="py-8 text-lg md:w-[500px]">
               We'll build you a smart, sophisticated investment portfolio
               designed to help you achieve your goals.
             </p>
@@ -48,7 +48,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="my-64 md:px-10">
+      <div className="my-64 md:px-20">
         <div className="md:w-[700px]">
           <h2 className="md:text-6xl text-2xl font-medium">
             Professionally managed portfolios, tailored to you.
@@ -101,8 +101,37 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div className="bg-[#f1f0f0] mt-32">
-        <div className="md:px-10 py-32"></div>
+      <div className="bg-[#1c1b1b] mt-32 text-white">
+        <div className="md:px-20 py-32">
+          <div className="grid grid-cols-3 gap-10">
+            <div className="col-span-2">
+              <div className="mb-8 md:w-[600px]">
+                <h4 className="text-6xl">Invest beyond public markets</h4>
+                <p className="text-xl mt-8">
+                  Our alternatives investing program is exclusively available to
+                  Wealthsimple Premium and Generation clients. It’s where you
+                  get unprecedented access to opportunities traditionally
+                  reserved for industry insiders and the ultra-wealthy.
+                </p>
+              </div>
+              <div className="bg-[#32302F] p-10 rounded-3xl h-[400px]">
+                <h4 className="text-3xl font-bold">Private credit</h4>
+                <div className="mt-8 text-xl">
+                  Gain added protection against downside risk and earn a
+                  targeted 9% monthly yield (after fees), when you invest in
+                  private lending.
+                </div>
+              </div>
+            </div>
+            <div className="bg-[#32302F] p-10 rounded-3xl">
+              <h4 className="text-3xl font-bold">Private equity</h4>
+              <div className="mt-8 text-xl">
+                Invest in privately held companies, and you’ll have the
+                potential to outperform the stock market.
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </Layout>
   );
