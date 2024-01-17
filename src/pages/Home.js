@@ -42,7 +42,7 @@ const Home = () => {
             />
           </div>
           <div className="w-full bg-slate-900 rounded-xl">
-            <video className="rounded-md" muted autoPlay loop controls={false}>
+            <video className="rounded-md md:h-full h-[300px]" muted autoPlay loop controls={false}>
               <source src={Video} />
             </video>
           </div>
@@ -114,21 +114,27 @@ const Home = () => {
                   reserved for industry insiders and the ultra-wealthy.
                 </p>
               </div>
-              <div className="bg-[#32302F] p-10 rounded-3xl h-[400px]">
+              <div className="bg-[#32302F] overflow-hidden relative p-10 rounded-3xl h-[400px]">
                 <h4 className="text-3xl font-bold">Private credit</h4>
                 <div className="mt-8 text-xl">
                   Gain added protection against downside risk and earn a
                   targeted 9% monthly yield (after fees), when you invest in
                   private lending.
                 </div>
+                <div className="absolute -bottom-[100px] w-[300px] right-0">
+                  <img className="w-[300px]" src={require('../components/assests/images/alts-private-credit-cube.webp')} alt="private equity cube"/>
+                </div>
               </div>
             </div>
-            <div className="bg-[#32302F] p-10 rounded-3xl">
+            <div className="bg-[#32302F] overflow-hidden relative p-10 rounded-3xl">
               <h4 className="text-3xl font-bold">Private equity</h4>
               <div className="mt-8 text-xl">
                 Invest in privately held companies, and you’ll have the
                 potential to outperform the stock market.
               </div>
+              <div className="absolute bottom-[50px] w-[300px]">
+                  <img className="w-[300px]" src={require('../components/assests/images/alts-private-equity-cube.webp')} alt="private equity cube"/>
+                </div>
             </div>
           </div>
         </div>
