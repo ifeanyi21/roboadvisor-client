@@ -21,8 +21,8 @@ const Footer = () => {
     },
   ];
   return (
-    <div className="border border-t md:px-20 mt-20 py-16">
-      <div className="grid lg:grid-cols-6 md:grid-cols-4">
+    <div className="border border-t md:px-20 px-10 mt-20 py-16">
+      <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
         <div className="mb-8">
           <div className="mb-4">
             <h5 className="text-xl font-semibold">About us</h5>

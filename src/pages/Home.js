@@ -24,10 +24,10 @@ const Home = () => {
   ];
   return (
     <Layout>
-      <div className="md:px-20">
-        <div className="grid grid-cols-2 py-20">
-          <div className="my-auto">
-            <h1 className="text-left text-7xl font-medium mt-2">
+      <div className="md:px-20 px-10">
+        <div className="grid md:grid-cols-2 md:py-20 py-10">
+          <div className="my-auto mb-4">
+            <h1 className="text-left md:text-7xl text-4xl font-medium mt-2">
               Managed investing made to grow your wealth
             </h1>
             <p className="py-8 text-lg md:w-[500px]">
@@ -41,20 +41,26 @@ const Home = () => {
               }
             />
           </div>
-          <div className="w-full bg-slate-900 rounded-xl">
-            <video className="rounded-md md:h-full h-[300px]" muted autoPlay loop controls={false}>
+          <div className="w-full rounded-xl">
+            <video
+              className="rounded-md md:h-full w-full"
+              muted
+              autoPlay
+              loop
+              controls={false}
+            >
               <source src={Video} />
             </video>
           </div>
         </div>
       </div>
-      <div className="my-64 md:px-20">
+      <div className="md:my-64 my-32 md:px-20 px-10">
         <div className="md:w-[700px]">
-          <h2 className="md:text-6xl text-2xl font-medium">
+          <h2 className="md:text-6xl text-3xl font-medium">
             Professionally managed portfolios, tailored to you.
           </h2>
         </div>
-        <div className="grid md:grid-cols-3 grid-cols-1 pt-32 gap-8">
+        <div className="grid md:grid-cols-3 grid-cols-1 md:pt-32 pt-8 gap-8">
           {services.map((service) => {
             return (
               <div key={service.id} className="text-xl">
@@ -65,7 +71,7 @@ const Home = () => {
           })}
         </div>
       </div>
-      <div className="grid grid-cols-2 gap-20">
+      <div className="grid md:grid-cols-2 grid-cols-1 gap-20">
         <div className="">
           <img src={Banner} className="rounded-r-md" alt="banner" />
           <p className="uppercase text-center mt-4 text-sm">
@@ -74,7 +80,9 @@ const Home = () => {
           </p>
         </div>
         <div className="px-16">
-          <h4 className="text-6xl font-medium">Invest with confidence</h4>
+          <h4 className="md:text-6xl text-3xl font-medium">
+            Invest with confidence
+          </h4>
           <div className="my-8 text-xl">
             <h4 className="font-medium">Withstand market highs and lows</h4>
             <p className="mt-2">
@@ -102,11 +110,13 @@ const Home = () => {
         </div>
       </div>
       <div className="bg-[#1c1b1b] mt-32 text-white">
-        <div className="md:px-20 py-32">
-          <div className="grid grid-cols-3 gap-10">
-            <div className="col-span-2">
+        <div className="md:px-20 px-10 py-32">
+          <div className="grid lg:grid-cols-3 grid-cols-1 gap-10">
+            <div className="lg:col-span-2">
               <div className="mb-8 md:w-[600px]">
-                <h4 className="text-6xl">Invest beyond public markets</h4>
+                <h4 className="md:text-6xl text-3xl">
+                  Invest beyond public markets
+                </h4>
                 <p className="text-xl mt-8">
                   Our alternatives investing program is exclusively available to
                   Wealthsimple Premium and Generation clients. It’s where you
@@ -115,26 +125,36 @@ const Home = () => {
                 </p>
               </div>
               <div className="bg-[#32302F] overflow-hidden relative p-10 rounded-3xl h-[400px]">
-                <h4 className="text-3xl font-bold">Private credit</h4>
+                <h4 className="md:text-3xl font-bold text-xl">
+                  Private credit
+                </h4>
                 <div className="mt-8 text-xl">
                   Gain added protection against downside risk and earn a
                   targeted 9% monthly yield (after fees), when you invest in
                   private lending.
                 </div>
-                <div className="absolute -bottom-[100px] w-[300px] right-0">
-                  <img className="w-[300px]" src={require('../components/assests/images/alts-private-credit-cube.webp')} alt="private equity cube"/>
+                <div className="absolute md:-bottom-[100px] bottom-[0px] w-[170px] md:w-[200px] lg:w-[300px] right-0">
+                  <img
+                    className="w-full"
+                    src={require("../components/assests/images/alts-private-credit-cube.webp")}
+                    alt="private equity cube"
+                  />
                 </div>
               </div>
             </div>
-            <div className="bg-[#32302F] overflow-hidden relative p-10 rounded-3xl">
-              <h4 className="text-3xl font-bold">Private equity</h4>
+            <div className="bg-[#32302F] overflow-hidden relative p-10 rounded-3xl lg:h-auto h-[400px]">
+              <h4 className="md:text-3xl text-xl font-bold">Private equity</h4>
               <div className="mt-8 text-xl">
                 Invest in privately held companies, and you’ll have the
                 potential to outperform the stock market.
               </div>
-              <div className="absolute bottom-[50px] w-[300px]">
-                  <img className="w-[300px]" src={require('../components/assests/images/alts-private-equity-cube.webp')} alt="private equity cube"/>
-                </div>
+              <div className="absolute lg:bottom-[50px] bottom-0 w-[170px] md:w-[200px] lg:w-[300px] right-0">
+                <img
+                  className="w-full"
+                  src={require("../components/assests/images/alts-private-equity-cube.webp")}
+                  alt="private equity cube"
+                />
+              </div>
             </div>
           </div>
         </div>
