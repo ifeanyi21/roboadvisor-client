@@ -36,26 +36,27 @@ function RiskCalculator() {
 
   return (
     <main>
-      <section id="riskSection">
+      <section className="md:w-[800px] w-full p-3 rounded-md text-white mx-auto bg-purple-700">
         <h2>Select Your Risk Tolerance</h2>
         <div className="flex gap-6">
-          <label htmlFor="riskSlider" className="w-[100px]">
+          <label htmlFor="riskSlider" className="w-[100px] md:block hidden">
             Risk Level
           </label>
           <Slider
             aria-label="Default"
+            className="cursor-move"
             valueLabelDisplay="auto"
             disabled={show}
             size="medium"
             min={1}
             max={10}
-            color="success"
+            color="warning"
             value={riskLevel}
             onChange={hanldeUpdate}
           />
         </div>
       </section>
-      <section className="bg-purple-900 text-white p-5 shadow-md rounded-md">
+      <section className="bg-purple-900 md:w-[800px] text-white p-5 shadow-md rounded-md">
         <p className="my-2">Risk Level: {riskLevel}</p>
         <div>
           <div
@@ -63,7 +64,7 @@ function RiskCalculator() {
               portfolioData["Nigerian Bonds"] === 0 && "hidden"
             } flex gap-3 mb-4`}
           >
-            <p>Nigerian Bonds</p>
+            <p className="w-[150px]">Nigerian Bonds</p>
             <div>
               {!show ? (
                 <Progress
@@ -71,7 +72,7 @@ function RiskCalculator() {
                   value={portfolioData["Nigerian Bonds"]}
                 />
               ) : (
-                <Skeleton animation="wave" className="w-[300px]" />
+                <Skeleton animation="wave" className="md:w-[500px] w-[150px]" />
               )}
             </div>
           </div>
@@ -80,7 +81,7 @@ function RiskCalculator() {
               portfolioData["Nigerian Stocks"] === 0 && "hidden"
             } flex gap-3 mb-4`}
           >
-            <p>Nigerian Stocks</p>
+            <p className="w-[150px]">Nigerian Stocks</p>
             <div>
               {!show ? (
                 <Progress
@@ -88,7 +89,7 @@ function RiskCalculator() {
                   value={portfolioData["Nigerian Stocks"]}
                 />
               ) : (
-                <Skeleton animation="wave" className="w-[300px]" />
+                <Skeleton animation="wave" className="md:w-[500px] w-[150px]" />
               )}
             </div>
           </div>
@@ -97,26 +98,26 @@ function RiskCalculator() {
               portfolioData["Real Estate"] === 0 && "hidden"
             } flex gap-3 mb-4`}
           >
-            <p>Real Estate</p>
+            <p className="w-[150px]">Real Estate</p>
             <div>
               {!show ? (
                 <Progress styled={" "} value={portfolioData["Real Estate"]} />
               ) : (
-                <Skeleton animation="wave" className="w-[300px]" />
+                <Skeleton animation="wave" className="md:w-[500px] w-[150px]" />
               )}
             </div>
           </div>
           <div
             className={`${
-              portfolioData["T-Bills"] === 0 && "hidden"
+              portfolioData["T-Bills"] === 0 && "slide-out-top hidden"
             } flex gap-3 mb-4`}
           >
-            <p>T-Bills</p>
+            <p className="w-[150px]">T-Bills</p>
             <div>
               {!show ? (
                 <Progress styled={" "} value={portfolioData["T-Bills"]} />
               ) : (
-                <Skeleton animation="wave" className="w-[300px]" />
+                <Skeleton animation="wave" className="md:w-[500px] w-[150px]" />
               )}
             </div>
           </div>
@@ -125,12 +126,12 @@ function RiskCalculator() {
               portfolioData["Alternative"] === 0 && "hidden"
             } flex gap-3 mb-4`}
           >
-            <p>Alternative</p>
+            <p className="w-[150px]">Alternative</p>
             <div>
               {!show ? (
                 <Progress styled={" "} value={portfolioData["Alternative"]} />
               ) : (
-                <Skeleton animation="wave" className="w-[300px]" />
+                <Skeleton animation="wave" className="md:w-[500px] w-[150px]" />
               )}
             </div>
           </div>
@@ -139,12 +140,12 @@ function RiskCalculator() {
               portfolioData["Commodities"] === 0 && "hidden"
             } flex gap-3 mb-4`}
           >
-            <p>Commodities</p>
+            <p className="w-[150px]">Commodities</p>
             <div>
               {!show ? (
                 <Progress styled={" "} value={portfolioData["Commodities"]} />
               ) : (
-                <Skeleton animation="wave" className="w-[300px]" />
+                <Skeleton animation="wave" className="md:w-[500px] w-[150px]" />
               )}
             </div>
           </div>
@@ -153,7 +154,7 @@ function RiskCalculator() {
               portfolioData["Emerging Stocks"] === 0 && "hidden"
             } flex gap-3 mb-4`}
           >
-            <p>Emerging Stocks</p>
+            <p className="w-[150px]">Emerging Stocks</p>
             <div>
               {!show ? (
                 <Progress
@@ -161,7 +162,7 @@ function RiskCalculator() {
                   value={portfolioData["Emerging Stocks"]}
                 />
               ) : (
-                <Skeleton animation="wave" className="w-[300px]" />
+                <Skeleton animation="wave" className="md:w-[500px] w-[150px]" />
               )}
             </div>
           </div>
@@ -170,7 +171,7 @@ function RiskCalculator() {
               portfolioData["Foriegn Stocks"] === 0 && "hidden"
             } flex gap-3 mb-4`}
           >
-            <p>Foriegn Stocks</p>
+            <p className="w-[150px]">Foriegn Stocks</p>
             <div>
               {!show ? (
                 <Progress
@@ -178,7 +179,7 @@ function RiskCalculator() {
                   value={portfolioData["Foriegn Stocks"]}
                 />
               ) : (
-                <Skeleton animation="wave" className="w-[300px]" />
+                <Skeleton animation="wave" className="md:w-[500px] w-[150px]" />
               )}
             </div>
           </div>
@@ -187,12 +188,12 @@ function RiskCalculator() {
               portfolioData["Foriegn Bonds"] === 0 && "hidden"
             } flex gap-3 mb-4`}
           >
-            <p>Foriegn Bonds</p>
+            <p className="w-[150px]">Foriegn Bonds</p>
             <div>
               {!show ? (
                 <Progress styled={" "} value={portfolioData["Foriegn Bonds"]} />
               ) : (
-                <Skeleton animation="wave" className="w-[300px]" />
+                <Skeleton animation="wave" className="md:w-[500px] w-[150px]" />
               )}
             </div>
           </div>
@@ -201,12 +202,12 @@ function RiskCalculator() {
               portfolioData["Tech Stocks"] === 0 && "hidden"
             } flex gap-3 mb-4`}
           >
-            <p>Tech Stocks</p>
+            <p className="w-[150px]">Tech Stocks</p>
             <div>
               {!show ? (
                 <Progress styled={" "} value={portfolioData["Tech Stocks"]} />
               ) : (
-                <Skeleton animation="wave" className="w-[300px]" />
+                <Skeleton animation="wave" className="md:w-[500px] w-[150px]" />
               )}
             </div>
           </div>

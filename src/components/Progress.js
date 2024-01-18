@@ -10,7 +10,7 @@ const Progress = ({value, styled}) => {
       borderRadius="5px"
       bgColor="white"
       labelColor="#1c1b1b"
-      className={`${styled} text-sm w-[500px] bg-transparent`}
+      className={`${styled} text-sm md:w-[500px] w-[150px] bg-transparent`}
     />
   );
 };
