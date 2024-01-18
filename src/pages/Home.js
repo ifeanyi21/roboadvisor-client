@@ -3,7 +3,7 @@ import Layout from "../components/layout/Layout";
 import Button from "../components/Button/Button";
 import Video from "../components/assests/videos/mi-en.webm";
 import Banner from "../components/assests/images/managedInvestingSupportingZoe.webp";
-import RiskSection from "../components/RiskSection";
+import RiskCalculator from "../components/RiskCalculator";
 
 const Home = () => {
   const services = [
@@ -180,7 +180,7 @@ const Home = () => {
         </div>
       </div>
       <div className="mt-16 md:px-20 px-10">
-        <RiskSection/>
+        <RiskCalculator />
       </div>
     </Layout>
   );
