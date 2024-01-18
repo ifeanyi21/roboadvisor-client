@@ -2,16 +2,12 @@ import React, { useState, useEffect, useCallback } from "react";
 import Slider from "@mui/material/Slider";
 import axios from "axios";
 import { Skeleton } from "@mui/material";
-
-// const getPortfolioData = async (riskLevel) => {
-
-//   return `Portfolio data for risk level ${riskLevel}`;
-// };
+import Progress from "./Progress";
 
 function RiskCalculator() {
-  const [riskLevel, setRiskLevel] = useState(3);
+  const [riskLevel, setRiskLevel] = useState(1);
   const [show, setShow] = useState(true);
-  const [portfolioData, setPortfolioData] = useState({})
+  const [portfolioData, setPortfolioData] = useState({});
 
   const hanldeUpdate = (e) => {
     setRiskLevel(e.target.value);
@@ -59,49 +55,160 @@ function RiskCalculator() {
           />
         </div>
       </section>
-      <section className="bg-[#f9f9f9] p-5 shadow-md rounded-md">
-        <h2 className="text-xl">Portfolio</h2>
+      <section className="bg-purple-900 text-white p-5 shadow-md rounded-md">
         <p className="my-2">Risk Level: {riskLevel}</p>
         <div>
-        <div className="flex gap-3 mb-4">
+          <div
+            className={`${
+              portfolioData["Nigerian Bonds"] === 0 && "hidden"
+            } flex gap-3 mb-4`}
+          >
             <p>Nigerian Bonds</p>
-            <p>{!show ? portfolioData["Nigerian Bonds"]: <Skeleton animation="wave" className="w-[300px]" />}</p>
+            <div>
+              {!show ? (
+                <Progress
+                  styled={" "}
+                  value={portfolioData["Nigerian Bonds"]}
+                />
+              ) : (
+                <Skeleton animation="wave" className="w-[300px]" />
+              )}
+            </div>
           </div>
-          <div className="flex gap-3 mb-4">
+          <div
+            className={`${
+              portfolioData["Nigerian Stocks"] === 0 && "hidden"
+            } flex gap-3 mb-4`}
+          >
             <p>Nigerian Stocks</p>
-            <p>{!show ? portfolioData["Nigerian Stocks"]: <Skeleton animation="wave" className="w-[300px]" />}</p>
+            <div>
+              {!show ? (
+                <Progress
+                  styled={" "}
+                  value={portfolioData["Nigerian Stocks"]}
+                />
+              ) : (
+                <Skeleton animation="wave" className="w-[300px]" />
+              )}
+            </div>
           </div>
-          <div className="flex gap-3 mb-4">
+          <div
+            className={`${
+              portfolioData["Real Estate"] === 0 && "hidden"
+            } flex gap-3 mb-4`}
+          >
             <p>Real Estate</p>
-            <p>{!show ? portfolioData["Real Estate"]: <Skeleton animation="wave" className="w-[300px]" />}</p>
+            <div>
+              {!show ? (
+                <Progress styled={" "} value={portfolioData["Real Estate"]} />
+              ) : (
+                <Skeleton animation="wave" className="w-[300px]" />
+              )}
+            </div>
           </div>
-          <div className="flex gap-3 mb-4">
+          <div
+            className={`${
+              portfolioData["T-Bills"] === 0 && "hidden"
+            } flex gap-3 mb-4`}
+          >
             <p>T-Bills</p>
-            <p>{!show ? portfolioData["T-Bills"]: <Skeleton animation="wave" className="w-[300px]" />}</p>
+            <div>
+              {!show ? (
+                <Progress styled={" "} value={portfolioData["T-Bills"]} />
+              ) : (
+                <Skeleton animation="wave" className="w-[300px]" />
+              )}
+            </div>
           </div>
-          <div className="flex gap-3 mb-4">
+          <div
+            className={`${
+              portfolioData["Alternative"] === 0 && "hidden"
+            } flex gap-3 mb-4`}
+          >
             <p>Alternative</p>
-            <p>{!show ? portfolioData["Alternative"]: <Skeleton animation="wave" className="w-[300px]" />}</p>
+            <div>
+              {!show ? (
+                <Progress styled={" "} value={portfolioData["Alternative"]} />
+              ) : (
+                <Skeleton animation="wave" className="w-[300px]" />
+              )}
+            </div>
           </div>
-          <div className="flex gap-3 mb-4">
+          <div
+            className={`${
+              portfolioData["Commodities"] === 0 && "hidden"
+            } flex gap-3 mb-4`}
+          >
             <p>Commodities</p>
-            <p>{!show ? portfolioData["Commodities"]: <Skeleton animation="wave" className="w-[300px]" />}</p>
+            <div>
+              {!show ? (
+                <Progress styled={" "} value={portfolioData["Commodities"]} />
+              ) : (
+                <Skeleton animation="wave" className="w-[300px]" />
+              )}
+            </div>
           </div>
-          <div className="flex gap-3 mb-4">
+          <div
+            className={`${
+              portfolioData["Emerging Stocks"] === 0 && "hidden"
+            } flex gap-3 mb-4`}
+          >
             <p>Emerging Stocks</p>
-            <p>{!show ? portfolioData["Emerging Stocks"]: <Skeleton animation="wave" className="w-[300px]" />}</p>
+            <div>
+              {!show ? (
+                <Progress
+                  styled={" "}
+                  value={portfolioData["Emerging Stocks"]}
+                />
+              ) : (
+                <Skeleton animation="wave" className="w-[300px]" />
+              )}
+            </div>
           </div>
-          <div className="flex gap-3 mb-4">
+          <div
+            className={`${
+              portfolioData["Foriegn Stocks"] === 0 && "hidden"
+            } flex gap-3 mb-4`}
+          >
             <p>Foriegn Stocks</p>
-            <p>{!show ? portfolioData["Foriegn Stocks"]: <Skeleton animation="wave" className="w-[300px]" />}</p>
+            <div>
+              {!show ? (
+                <Progress
+                  styled={" "}
+                  value={portfolioData["Foriegn Stocks"]}
+                />
+              ) : (
+                <Skeleton animation="wave" className="w-[300px]" />
+              )}
+            </div>
           </div>
-          <div className="flex gap-3 mb-4">
+          <div
+            className={`${
+              portfolioData["Foriegn Bonds"] === 0 && "hidden"
+            } flex gap-3 mb-4`}
+          >
             <p>Foriegn Bonds</p>
-            <p>{!show ? portfolioData["Foriegn Bonds"]: <Skeleton animation="wave" className="w-[300px]" />}</p>
+            <div>
+              {!show ? (
+                <Progress styled={" "} value={portfolioData["Foriegn Bonds"]} />
+              ) : (
+                <Skeleton animation="wave" className="w-[300px]" />
+              )}
+            </div>
           </div>
-          <div className="flex gap-3 mb-4">
+          <div
+            className={`${
+              portfolioData["Tech Stocks"] === 0 && "hidden"
+            } flex gap-3 mb-4`}
+          >
             <p>Tech Stocks</p>
-            <p>{!show ? portfolioData["Tech Stocks"]: <Skeleton animation="wave" className="w-[300px]" />}</p>
+            <div>
+              {!show ? (
+                <Progress styled={" "} value={portfolioData["Tech Stocks"]} />
+              ) : (
+                <Skeleton animation="wave" className="w-[300px]" />
+              )}
+            </div>
           </div>
         </div>
       </section>
