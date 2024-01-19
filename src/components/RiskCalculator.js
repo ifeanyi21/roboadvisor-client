@@ -35,8 +35,8 @@ function RiskCalculator() {
   }, [riskLevel, updatePortfolio]);
 
   return (
-    <main>
-      <section className="md:w-[800px] w-full p-3 rounded-md text-white mx-auto bg-purple-700">
+    <main className="md:w-[800px] w-full mx-auto">
+      <section className="p-3 rounded-md text-white mx-auto bg-purple-700">
         <h2>Select Your Risk Tolerance</h2>
         <div className="flex gap-6">
           <label htmlFor="riskSlider" className="w-[100px] md:block hidden">
@@ -56,7 +56,7 @@ function RiskCalculator() {
           />
         </div>
       </section>
-      <section className="bg-purple-900 md:w-[800px] text-white p-5 shadow-md rounded-md">
+      <section className="bg-purple-900 text-white p-5 shadow-md rounded-md">
         <p className="my-2">Risk Level: {riskLevel}</p>
         <div>
           <div
